@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="700.0" prefWidth="750.0" spacing="25.0"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.btssio66.oarboux.graphiquecastlefight.controllers.PrimaryController">
+
+    <children>
+        <VBox alignment="CENTER" spacing="0">
+            <Label styleClass="main-title" text="CASTLE FIGHT" />
+            <Label styleClass="main-title" text="ARENA" style="-fx-font-size: 30px; -fx-text-fill: #8899a6;"/>
+        </VBox>
+
+        <Label fx:id="playerTurnLabel" styleClass="instruction-label" 
+               text="Joueur 1 : Sélectionnez votre champion" />
+
+        <GridPane fx:id="imageGrid" alignment="CENTER" hgap="30" vgap="30">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10" vgrow="SOMETIMES" />
+            </rowConstraints>
+
+            <!-- PERSO 1 : ELFE (NOM CORRIGÉ ICI) -->
+            <StackPane onMouseClicked="#handleImageClick" userData="character1" 
+                       GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="hero-card">
+                <ImageView fx:id="imageView1" fitHeight="150.0" fitWidth="150.0" preserveRatio="true">
+                    <image>
+                        <!-- NOM EXACT DE TON FICHIER -->
+                        <Image url="@../../../../images/pixellab-an-elf--boy---and-armor-with-b-1762423256113.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="playerLabel1" text="" StackPane.alignment="BOTTOM_CENTER" styleClass="hero-name"/>
+            </StackPane>
+
+            <!-- PERSO 2 : NAIN -->
+            <StackPane onMouseClicked="#handleImageClick" userData="character2" 
+                       GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="hero-card">
+                <ImageView fx:id="imageView2" fitHeight="150.0" fitWidth="150.0" preserveRatio="true">
+                    <image><Image url="@../../../../images/pixellab-dwarf--boy--with-helmet-and-ha-1762423570721.png" /></image>
+                </ImageView>
+                <Label fx:id="playerLabel2" text="" StackPane.alignment="BOTTOM_CENTER" styleClass="hero-name"/>
+            </StackPane>
+
+            <!-- PERSO 3 : GUERRIER -->
+            <StackPane onMouseClicked="#handleImageClick" userData="character3" 
+                       GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="hero-card">
+                <ImageView fx:id="imageView3" fitHeight="150.0" fitWidth="150.0" preserveRatio="true">
+                    <image><Image url="@../../../../images/pixellab-warrior-with-plastron-and-axe--1762423914101.png" /></image>
+                </ImageView>
+                <Label fx:id="playerLabel3" text="" StackPane.alignment="BOTTOM_CENTER" styleClass="hero-name"/>
+            </StackPane>
+
+            <!-- PERSO 4 : SORCIÈRE -->
+            <StackPane onMouseClicked="#handleImageClick" userData="character4" 
+                       GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="hero-card">
+                <ImageView fx:id="imageView4" fitHeight="150.0" fitWidth="150.0" preserveRatio="true">
+                    <image><Image url="@../../../../images/pixellab-witch--girl--with-potion-and-h-1762423722830.png" /></image>
+                </ImageView>
+                <Label fx:id="playerLabel4" text="" StackPane.alignment="BOTTOM_CENTER" styleClass="hero-name"/>
+            </StackPane>
+        </GridPane>
+
+        <Button fx:id="playButton" disable="true" onAction="#handlePlayButton" 
+                text="COMMENCER LE COMBAT" styleClass="play-btn" />
+
+    </children>
+    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
+</VBox>

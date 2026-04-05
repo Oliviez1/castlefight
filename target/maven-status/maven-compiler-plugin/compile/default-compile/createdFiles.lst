@@ -1,0 +1,11 @@
+com\btssio66\oarboux\graphiquecastlefight\model\Combattant.class
+com\btssio66\oarboux\graphiquecastlefight\model\Nain.class
+com\btssio66\oarboux\graphiquecastlefight\model\Sorciere.class
+com\btssio66\oarboux\graphiquecastlefight\model\ScoreManager.class
+com\btssio66\oarboux\graphiquecastlefight\model\Personnage.class
+com\btssio66\oarboux\graphiquecastlefight\model\Guerrier.class
+module-info.class
+com\btssio66\oarboux\graphiquecastlefight\controllers\PrimaryController.class
+com\btssio66\oarboux\graphiquecastlefight\model\Elfe.class
+com\btssio66\oarboux\graphiquecastlefight\controllers\GameSceneController.class
+com\btssio66\oarboux\graphiquecastlefight\App.class

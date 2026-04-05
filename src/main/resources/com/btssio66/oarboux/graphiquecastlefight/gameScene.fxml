@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<VBox alignment="CENTER" prefHeight="700" prefWidth="750" spacing="10" 
+      xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.btssio66.oarboux.graphiquecastlefight.controllers.GameSceneController">
+
+    <children>
+        <!-- TITRE BAGARRE (Style parchemin) -->
+        <Label styleClass="title-label" text="BAGARRE !!!"
+               style="-fx-font-size: 60px; -fx-font-weight: 900; -fx-text-fill: #8b0000; -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 3, 0, 2, 2);">
+        </Label>
+
+        <HBox alignment="CENTER" spacing="15">
+            
+            <!-- JOUEUR 1 -->
+            <VBox alignment="CENTER" spacing="10">
+                <ImageView fx:id="player1Image" fitHeight="160" fitWidth="160" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0);" />
+                <ProgressBar fx:id="hpBar1" prefWidth="160.0" progress="1.0" />
+                <!-- NOM EN BLEU FONCÉ -->
+                <Label fx:id="player1Label" style="-fx-text-fill: #01579b; -fx-font-size: 18px; -fx-font-weight: 900;"/> 
+            </VBox>
+
+            <!-- CENTRE (LOG) -->
+            <VBox alignment="CENTER" spacing="5">
+                <Label text="Journal de combat" style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #3e2723;"/>
+                
+                <!-- ScrollPane style vieux papier -->
+                <ScrollPane fx:id="scrollPane" fitToWidth="true" prefHeight="200.0" prefWidth="350.0">
+                    <content>
+                        <TextFlow fx:id="combatLogFlow" style="-fx-background-color: #fff8e1; -fx-padding: 10;" />
+                    </content>
+                </ScrollPane>
+                
+                <!-- BOUTON ÉLARGI (prefWidth=250) -->
+                <Button fx:id="attackButton" text="⚔ ATTAQUER ⚔" onAction="#handleAttack" prefWidth="250" style="-fx-font-size: 20px;"/>
+            </VBox>
+
+            <!-- JOUEUR 2 -->
+            <VBox alignment="CENTER" spacing="10">
+                <ImageView fx:id="player2Image" fitHeight="160" fitWidth="160" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0);" />
+                <ProgressBar fx:id="hpBar2" prefWidth="160.0" progress="1.0" />
+                <!-- NOM EN ROUGE FONCÉ -->
+                <Label fx:id="player2Label" style="-fx-text-fill: #880e4f; -fx-font-size: 18px; -fx-font-weight: 900;"/> 
+            </VBox>
+
+        </HBox>
+
+        <!-- FIN DE PARTIE -->
+        <VBox fx:id="endGameBox" alignment="CENTER" spacing="10" visible="false" 
+              style="-fx-background-color: rgba(255, 248, 225, 0.95); -fx-padding: 15; -fx-background-radius: 10; -fx-border-color: #d4af37; -fx-border-width: 4px;">
+            
+            <Label text="🏆 CLASSEMENT GÉNÉRAL 🏆" style="-fx-text-fill: #f57f17; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+            
+            <TextArea fx:id="rankingArea" editable="false" prefHeight="120" prefWidth="300" 
+                      style="-fx-font-family: 'Courier New'; -fx-font-size: 14px; -fx-control-inner-background: #fff3e0; -fx-text-fill: black;"/>
+            
+            <Button text="🔄 REJOUER UNE PARTIE" onAction="#handleReplay" 
+                    styleClass="play-btn"/>
+        </VBox>
+
+    </children>
+    <padding><Insets bottom="10" left="20" right="20" top="10" /></padding>
+</VBox>
