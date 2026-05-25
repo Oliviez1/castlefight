@@ -188,6 +188,7 @@ public class GameSceneController {
         }
 
         ScoreManager.ajouterVictoire(gagnant.getNom());
+        ScoreManager.ajouterDefaite(perdant.getNom());
 
         if (endGameBox != null) {
             endGameBox.setVisible(true);
